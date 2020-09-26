@@ -1,7 +1,5 @@
 package com.sky.demo.elasticsearch.threadconcurrency;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import sun.misc.Unsafe;
 
 import java.util.Objects;
@@ -23,8 +21,6 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class TradeService {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
 
     /**
      * 状态 维持共享变量可见性
@@ -64,7 +60,7 @@ public class TradeService {
      *
      * @return
      */
-    public int getState() {
+    private int getState() {
         return state;
     }
 
