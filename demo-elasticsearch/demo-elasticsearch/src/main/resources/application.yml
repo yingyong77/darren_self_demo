@@ -1,0 +1,49 @@
+digger:
+  repo:
+    worker-id: ${random.int[0,31]}
+    data-center-id: ${random.int[0,31]}
+  mcc-key: skytech1
+
+
+spring:
+  data:
+    jest:
+      uri: http://192.168.1.71:9200
+    elasticsearch:
+      cluster-name: digger-71-test
+      cluster-nodes: 192.168.1.71:9300
+  profiles:
+    include: ons-prod
+  datasource:
+    url: jdbc:mysql://rm-bp1af9s989zkct11hwo.mysql.rds.aliyuncs.com:3306/digger?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: digger_prod
+    password: S5JS6TFZuHETMllG
+    driver-class-name: com.mysql.jdbc.Driver
+  rabbitmq:
+    username: edata
+    password: edata@rabbitmq
+    host: mq.digger.skytech.cn
+    port: 5672
+    virtual-host: digger-test
+    listener:
+      simple:
+        concurrency: 1
+  mail:
+    default-encoding: UTF-8
+    host: smtp.263.net
+    port: 25
+    username: sys.message@skytech.cn
+    password: shtq365
+    properties:
+      email:
+        smtp:
+          ssl:
+            enable: false
+          auth: true
+          starttls:
+            enable: true
+            required: true
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.skytech.edata.repo.common.model
+  type-handlers-package: com.skytech.edata.repo.mysql.base
