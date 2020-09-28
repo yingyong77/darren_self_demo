@@ -1,11 +1,11 @@
-package com.sky.demo.elasticsearch.threadconcurrency;
+package com.sky.demo.elasticsearch.operation;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
+import com.sky.demo.elasticsearch.threadconcurrency.UnsafeInstance;
 import sun.misc.Unsafe;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -15,6 +15,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author : darren
  * @date : 2020/5/27
  * @see sun.misc.Unsafe
+ * @see AbstractQueuedSynchronizer abstarct AQS
  * <p>
  * CAS三板斧 核心骨架
  * 1: CAS保证状态的修改 原子性 中间不中断 原子指令 单元电路  <>一个状态变量
@@ -22,9 +23,6 @@ import java.util.concurrent.locks.ReentrantLock;
  * 3：lockSupport park unpark
  */
 public class TradeService {
-
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
 
     /**
      * 状态 维持共享变量可见性
@@ -87,7 +85,7 @@ public class TradeService {
      */
     public void desStockNoLock() {
 
-//        lock.lock();
+        //lock.lock();
 
         Thread current = Thread.currentThread();
 

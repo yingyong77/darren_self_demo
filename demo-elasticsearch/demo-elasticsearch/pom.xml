@@ -51,9 +51,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.skytech.edata</groupId>
-            <artifactId>edata-repo-mysql</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -62,11 +62,11 @@
         </dependency>
 
 
-<!--        <dependency>-->
-<!--            <groupId>com.skytech.edata</groupId>-->
-<!--            <artifactId>edata-repo-elasticsearch</artifactId>-->
-<!--            <version>0.0.1-SNAPSHOT</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.skytech.edata</groupId>-->
+        <!--            <artifactId>edata-repo-elasticsearch</artifactId>-->
+        <!--            <version>0.0.1-SNAPSHOT</version>-->
+        <!--        </dependency>-->
 
 
         <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->

@@ -1,5 +1,7 @@
 package com.sky.demo.elasticsearch.thread;
 
+import lombok.SneakyThrows;
+
 import java.util.concurrent.*;
 
 /**
@@ -85,8 +87,25 @@ public class ThreadPoolUtil {
 //    }
 
 
+    @SneakyThrows
     public static void main(String[] args) {
-        Executors.newCachedThreadPool();
+
+        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         Executors.newSingleThreadExecutor();
+        Executors.newFixedThreadPool(50);
+        Executors.newScheduledThreadPool(100);
+
+        cachedThreadPool.execute(() -> {
+            System.out.print("...");
+        });
+
+        Future<String> future = cachedThreadPool.submit(() -> {
+            System.out.print("...");
+            return "dddd";
+        });
+
+        if (future.isCancelled()) {
+            future.get();
+        }
     }
 }

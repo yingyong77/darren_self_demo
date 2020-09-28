@@ -12,10 +12,11 @@ public class ConcurrentHashMapTest {
 
     public static void main(String[] args) {
 
-        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap(32);
 
         concurrentHashMap.put("", "");
 
+        //笨重的锁
         Hashtable d = new Hashtable();
 
     }

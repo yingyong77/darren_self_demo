@@ -1,6 +1,7 @@
 package com.sky.demo.elasticsearch.queue;
 
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
 /**
  * 阻塞队列
@@ -15,7 +16,8 @@ import java.util.concurrent.ArrayBlockingQueue;
  */
 public class ArrayBlockingQueueTest {
 
-    ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(20);
+    //单向链表
+    BlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(20);
 
 
 }
