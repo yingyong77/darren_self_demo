@@ -12,9 +12,8 @@ public class HashMapTest {
 
     public static void main(String[] args) {
 
-        HashMap<String, String> map = new HashMap<>();
-
-
+        HashMap<String, String> map = new HashMap<>(16);
+        
         LinkedHashMap linkedHashMap = new LinkedHashMap();
 
         linkedHashMap.put("darren", "ying");
