@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.datasure.websure.config.pojo.BackupStrategyMapper" >
+  <resultMap id="BaseResultMap" type="com.datasure.websure.config.pojo.BackupStrategy" >
+    <id column="id" property="id" jdbcType="TINYINT" />
+    <result column="backup_strategy_name" property="backupStrategyName" jdbcType="VARCHAR" />
+    <result column="sync_enable" property="syncEnable" jdbcType="TINYINT" />
+    <result column="sync_interval_type" property="syncIntervalType" jdbcType="TINYINT" />
+    <result column="sync_interval_value" property="syncIntervalValue" jdbcType="INTEGER" />
+    <result column="sync_enable_limited_time" property="syncEnableLimitedTime" jdbcType="TINYINT" />
+    <result column="sync_limited_backup_time" property="syncLimitedBackupTime" jdbcType="VARCHAR" />
+    <result column="snap_interval_type" property="snapIntervalType" jdbcType="TINYINT" />
+    <result column="snap_interval_value" property="snapIntervalValue" jdbcType="INTEGER" />
+    <result column="snap_enable_time_limited" property="snapEnableTimeLimited" jdbcType="TINYINT" />
+    <result column="snap_limited_backup_time" property="snapLimitedBackupTime" jdbcType="VARCHAR" />
+    <result column="backup_snap_full_keep_num" property="backupSnapFullKeepNum" jdbcType="INTEGER" />
+    <result column="snap_keep_full_Type" property="snapKeepFullType" jdbcType="TINYINT" />
+    <result column="each_snap_data_group_max_num" property="eachSnapDataGroupMaxNum" jdbcType="INTEGER" />
+    <result column="snap_keep_day_count" property="snapKeepDayCount" jdbcType="INTEGER" />
+    <result column="backup_enable_speed_limited" property="backupEnableSpeedLimited" jdbcType="TINYINT" />
+    <result column="backup_speed_limited" property="backupSpeedLimited" jdbcType="INTEGER" />
+    <result column="backup_model_type" property="backupModelType" jdbcType="TINYINT" />
+    <result column="backup_check_model" property="backupCheckModel" jdbcType="TINYINT" />
+    <result column="lanFree_channel_type" property="lanfreeChannelType" jdbcType="TINYINT" />
+    <result column="enable_particles" property="enableParticles" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="deleted" property="deleted" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, backup_strategy_name, sync_enable, sync_interval_type, sync_interval_value, sync_enable_limited_time, 
+    sync_limited_backup_time, snap_interval_type, snap_interval_value, snap_enable_time_limited, 
+    snap_limited_backup_time, backup_snap_full_keep_num, snap_keep_full_Type, each_snap_data_group_max_num, 
+    snap_keep_day_count, backup_enable_speed_limited, backup_speed_limited, backup_model_type, 
+    backup_check_model, lanFree_channel_type, enable_particles, create_time, update_time, 
+    deleted
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Byte" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_backup_strategy
+    where id = #{id,jdbcType=TINYINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Byte" >
+    delete from t_backup_strategy
+    where id = #{id,jdbcType=TINYINT}
+  </delete>
+  <insert id="insert" parameterType="com.datasure.websure.config.pojo.BackupStrategy" >
+    insert into t_backup_strategy (id, backup_strategy_name, sync_enable, 
+      sync_interval_type, sync_interval_value, sync_enable_limited_time, 
+      sync_limited_backup_time, snap_interval_type, 
+      snap_interval_value, snap_enable_time_limited, 
+      snap_limited_backup_time, backup_snap_full_keep_num, 
+      snap_keep_full_Type, each_snap_data_group_max_num, 
+      snap_keep_day_count, backup_enable_speed_limited, 
+      backup_speed_limited, backup_model_type, backup_check_model, 
+      lanFree_channel_type, enable_particles, create_time, 
+      update_time, deleted)
+    values (#{id,jdbcType=TINYINT}, #{backupStrategyName,jdbcType=VARCHAR}, #{syncEnable,jdbcType=TINYINT}, 
+      #{syncIntervalType,jdbcType=TINYINT}, #{syncIntervalValue,jdbcType=INTEGER}, #{syncEnableLimitedTime,jdbcType=TINYINT}, 
+      #{syncLimitedBackupTime,jdbcType=VARCHAR}, #{snapIntervalType,jdbcType=TINYINT}, 
+      #{snapIntervalValue,jdbcType=INTEGER}, #{snapEnableTimeLimited,jdbcType=TINYINT}, 
+      #{snapLimitedBackupTime,jdbcType=VARCHAR}, #{backupSnapFullKeepNum,jdbcType=INTEGER}, 
+      #{snapKeepFullType,jdbcType=TINYINT}, #{eachSnapDataGroupMaxNum,jdbcType=INTEGER}, 
+      #{snapKeepDayCount,jdbcType=INTEGER}, #{backupEnableSpeedLimited,jdbcType=TINYINT}, 
+      #{backupSpeedLimited,jdbcType=INTEGER}, #{backupModelType,jdbcType=TINYINT}, #{backupCheckModel,jdbcType=TINYINT}, 
+      #{lanfreeChannelType,jdbcType=TINYINT}, #{enableParticles,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.datasure.websure.config.pojo.BackupStrategy" >
+    insert into t_backup_strategy
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="backupStrategyName != null" >
+        backup_strategy_name,
+      </if>
+      <if test="syncEnable != null" >
+        sync_enable,
+      </if>
+      <if test="syncIntervalType != null" >
+        sync_interval_type,
+      </if>
+      <if test="syncIntervalValue != null" >
+        sync_interval_value,
+      </if>
+      <if test="syncEnableLimitedTime != null" >
+        sync_enable_limited_time,
+      </if>
+      <if test="syncLimitedBackupTime != null" >
+        sync_limited_backup_time,
+      </if>
+      <if test="snapIntervalType != null" >
+        snap_interval_type,
+      </if>
+      <if test="snapIntervalValue != null" >
+        snap_interval_value,
+      </if>
+      <if test="snapEnableTimeLimited != null" >
+        snap_enable_time_limited,
+      </if>
+      <if test="snapLimitedBackupTime != null" >
+        snap_limited_backup_time,
+      </if>
+      <if test="backupSnapFullKeepNum != null" >
+        backup_snap_full_keep_num,
+      </if>
+      <if test="snapKeepFullType != null" >
+        snap_keep_full_Type,
+      </if>
+      <if test="eachSnapDataGroupMaxNum != null" >
+        each_snap_data_group_max_num,
+      </if>
+      <if test="snapKeepDayCount != null" >
+        snap_keep_day_count,
+      </if>
+      <if test="backupEnableSpeedLimited != null" >
+        backup_enable_speed_limited,
+      </if>
+      <if test="backupSpeedLimited != null" >
+        backup_speed_limited,
+      </if>
+      <if test="backupModelType != null" >
+        backup_model_type,
+      </if>
+      <if test="backupCheckModel != null" >
+        backup_check_model,
+      </if>
+      <if test="lanfreeChannelType != null" >
+        lanFree_channel_type,
+      </if>
+      <if test="enableParticles != null" >
+        enable_particles,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="deleted != null" >
+        deleted,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=TINYINT},
+      </if>
+      <if test="backupStrategyName != null" >
+        #{backupStrategyName,jdbcType=VARCHAR},
+      </if>
+      <if test="syncEnable != null" >
+        #{syncEnable,jdbcType=TINYINT},
+      </if>
+      <if test="syncIntervalType != null" >
+        #{syncIntervalType,jdbcType=TINYINT},
+      </if>
+      <if test="syncIntervalValue != null" >
+        #{syncIntervalValue,jdbcType=INTEGER},
+      </if>
+      <if test="syncEnableLimitedTime != null" >
+        #{syncEnableLimitedTime,jdbcType=TINYINT},
+      </if>
+      <if test="syncLimitedBackupTime != null" >
+        #{syncLimitedBackupTime,jdbcType=VARCHAR},
+      </if>
+      <if test="snapIntervalType != null" >
+        #{snapIntervalType,jdbcType=TINYINT},
+      </if>
+      <if test="snapIntervalValue != null" >
+        #{snapIntervalValue,jdbcType=INTEGER},
+      </if>
+      <if test="snapEnableTimeLimited != null" >
+        #{snapEnableTimeLimited,jdbcType=TINYINT},
+      </if>
+      <if test="snapLimitedBackupTime != null" >
+        #{snapLimitedBackupTime,jdbcType=VARCHAR},
+      </if>
+      <if test="backupSnapFullKeepNum != null" >
+        #{backupSnapFullKeepNum,jdbcType=INTEGER},
+      </if>
+      <if test="snapKeepFullType != null" >
+        #{snapKeepFullType,jdbcType=TINYINT},
+      </if>
+      <if test="eachSnapDataGroupMaxNum != null" >
+        #{eachSnapDataGroupMaxNum,jdbcType=INTEGER},
+      </if>
+      <if test="snapKeepDayCount != null" >
+        #{snapKeepDayCount,jdbcType=INTEGER},
+      </if>
+      <if test="backupEnableSpeedLimited != null" >
+        #{backupEnableSpeedLimited,jdbcType=TINYINT},
+      </if>
+      <if test="backupSpeedLimited != null" >
+        #{backupSpeedLimited,jdbcType=INTEGER},
+      </if>
+      <if test="backupModelType != null" >
+        #{backupModelType,jdbcType=TINYINT},
+      </if>
+      <if test="backupCheckModel != null" >
+        #{backupCheckModel,jdbcType=TINYINT},
+      </if>
+      <if test="lanfreeChannelType != null" >
+        #{lanfreeChannelType,jdbcType=TINYINT},
+      </if>
+      <if test="enableParticles != null" >
+        #{enableParticles,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deleted != null" >
+        #{deleted,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.datasure.websure.config.pojo.BackupStrategy" >
+    update t_backup_strategy
+    <set >
+      <if test="backupStrategyName != null" >
+        backup_strategy_name = #{backupStrategyName,jdbcType=VARCHAR},
+      </if>
+      <if test="syncEnable != null" >
+        sync_enable = #{syncEnable,jdbcType=TINYINT},
+      </if>
+      <if test="syncIntervalType != null" >
+        sync_interval_type = #{syncIntervalType,jdbcType=TINYINT},
+      </if>
+      <if test="syncIntervalValue != null" >
+        sync_interval_value = #{syncIntervalValue,jdbcType=INTEGER},
+      </if>
+      <if test="syncEnableLimitedTime != null" >
+        sync_enable_limited_time = #{syncEnableLimitedTime,jdbcType=TINYINT},
+      </if>
+      <if test="syncLimitedBackupTime != null" >
+        sync_limited_backup_time = #{syncLimitedBackupTime,jdbcType=VARCHAR},
+      </if>
+      <if test="snapIntervalType != null" >
+        snap_interval_type = #{snapIntervalType,jdbcType=TINYINT},
+      </if>
+      <if test="snapIntervalValue != null" >
+        snap_interval_value = #{snapIntervalValue,jdbcType=INTEGER},
+      </if>
+      <if test="snapEnableTimeLimited != null" >
+        snap_enable_time_limited = #{snapEnableTimeLimited,jdbcType=TINYINT},
+      </if>
+      <if test="snapLimitedBackupTime != null" >
+        snap_limited_backup_time = #{snapLimitedBackupTime,jdbcType=VARCHAR},
+      </if>
+      <if test="backupSnapFullKeepNum != null" >
+        backup_snap_full_keep_num = #{backupSnapFullKeepNum,jdbcType=INTEGER},
+      </if>
+      <if test="snapKeepFullType != null" >
+        snap_keep_full_Type = #{snapKeepFullType,jdbcType=TINYINT},
+      </if>
+      <if test="eachSnapDataGroupMaxNum != null" >
+        each_snap_data_group_max_num = #{eachSnapDataGroupMaxNum,jdbcType=INTEGER},
+      </if>
+      <if test="snapKeepDayCount != null" >
+        snap_keep_day_count = #{snapKeepDayCount,jdbcType=INTEGER},
+      </if>
+      <if test="backupEnableSpeedLimited != null" >
+        backup_enable_speed_limited = #{backupEnableSpeedLimited,jdbcType=TINYINT},
+      </if>
+      <if test="backupSpeedLimited != null" >
+        backup_speed_limited = #{backupSpeedLimited,jdbcType=INTEGER},
+      </if>
+      <if test="backupModelType != null" >
+        backup_model_type = #{backupModelType,jdbcType=TINYINT},
+      </if>
+      <if test="backupCheckModel != null" >
+        backup_check_model = #{backupCheckModel,jdbcType=TINYINT},
+      </if>
+      <if test="lanfreeChannelType != null" >
+        lanFree_channel_type = #{lanfreeChannelType,jdbcType=TINYINT},
+      </if>
+      <if test="enableParticles != null" >
+        enable_particles = #{enableParticles,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deleted != null" >
+        deleted = #{deleted,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.datasure.websure.config.pojo.BackupStrategy" >
+    update t_backup_strategy
+    set backup_strategy_name = #{backupStrategyName,jdbcType=VARCHAR},
+      sync_enable = #{syncEnable,jdbcType=TINYINT},
+      sync_interval_type = #{syncIntervalType,jdbcType=TINYINT},
+      sync_interval_value = #{syncIntervalValue,jdbcType=INTEGER},
+      sync_enable_limited_time = #{syncEnableLimitedTime,jdbcType=TINYINT},
+      sync_limited_backup_time = #{syncLimitedBackupTime,jdbcType=VARCHAR},
+      snap_interval_type = #{snapIntervalType,jdbcType=TINYINT},
+      snap_interval_value = #{snapIntervalValue,jdbcType=INTEGER},
+      snap_enable_time_limited = #{snapEnableTimeLimited,jdbcType=TINYINT},
+      snap_limited_backup_time = #{snapLimitedBackupTime,jdbcType=VARCHAR},
+      backup_snap_full_keep_num = #{backupSnapFullKeepNum,jdbcType=INTEGER},
+      snap_keep_full_Type = #{snapKeepFullType,jdbcType=TINYINT},
+      each_snap_data_group_max_num = #{eachSnapDataGroupMaxNum,jdbcType=INTEGER},
+      snap_keep_day_count = #{snapKeepDayCount,jdbcType=INTEGER},
+      backup_enable_speed_limited = #{backupEnableSpeedLimited,jdbcType=TINYINT},
+      backup_speed_limited = #{backupSpeedLimited,jdbcType=INTEGER},
+      backup_model_type = #{backupModelType,jdbcType=TINYINT},
+      backup_check_model = #{backupCheckModel,jdbcType=TINYINT},
+      lanFree_channel_type = #{lanfreeChannelType,jdbcType=TINYINT},
+      enable_particles = #{enableParticles,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      deleted = #{deleted,jdbcType=BIT}
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+</mapper>
