@@ -95,8 +95,9 @@ public class CyclicBarrierTest {
                 e.printStackTrace();
             }
         });
-        
+
         executorService.shutdown();
+        
     }
 
 

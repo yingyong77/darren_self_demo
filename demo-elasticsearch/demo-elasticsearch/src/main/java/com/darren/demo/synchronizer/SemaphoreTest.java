@@ -10,6 +10,9 @@ import java.util.concurrent.Semaphore;
  * 计数器内部是递增的
  * 一开始可以指定一个初始值  但不需要知道同步的线程个数，
  * 而是在需要同步的地方调用acquire方式时指定需要同步的线程个数
+ * <p>
+ * <p>
+ * 在这里把AQS中的 state 当作了一个信号量
  *
  * @author : darren
  * @date : 2021/7/1
