@@ -1,4 +1,4 @@
-package com.darren.demo.orm.db;
+package com.darren.demo.utils.db;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

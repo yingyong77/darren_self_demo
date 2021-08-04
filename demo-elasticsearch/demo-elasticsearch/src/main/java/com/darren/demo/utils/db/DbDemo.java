@@ -1,4 +1,4 @@
-package com.darren.demo.orm.db;
+package com.darren.demo.utils.db;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
