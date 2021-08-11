@@ -8,7 +8,7 @@ import org.apache.tomcat.util.net.NioEndpoint;
  * <p>
  * ConcurrentLinkedQueue 无界线程安全队列
  * <p>
- * tomcat7.0中poller用的是ConcurrentLinkedQueue
+ * tomcat7.0中poller用的是{@link ConcurrentLinkedQueue}
  * tomcat9.0中poller用的是 {@link org.apache.tomcat.util.collections.SynchronizedQueue}
  *
  * @author : darren

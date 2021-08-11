@@ -44,7 +44,6 @@ public class ConcurrentHashMapTest {
 
         //回判断hash值是否一样 如果值一样则不会更新  直接返回原值
 
-
         BusLine busLineThree = new BusLine().setLinedId(666).setLineName("three");
         BusLine busLineFour = new BusLine().setLinedId(666).setLineName("four");
 

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -18,7 +19,14 @@ import java.util.stream.Collectors;
 @Component
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class ThreadLocal {
-
+    //another写法 java8.0 DateTimeFormatter
+    private java.lang.ThreadLocal<DateFormat> dateFormatThreadLocal = new java.lang.ThreadLocal<DateFormat>() {
+        @Override
+        protected SimpleDateFormat initialValue() {
+            return new SimpleDateFormat("yyyy-MM-dd");
+        }
+    };
+      
     private java.lang.ThreadLocal<SimpleDateFormat> dateFormat = java.lang.ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd"));
 
 
@@ -29,6 +37,7 @@ public class ThreadLocal {
      * @return {@link List< ComputeDTO >}
      */
     @NotNull
+
     private List<ComputeDTO> convertToComputeDTOS(List<ComputeDTO> computeDTOS) {
 
         return computeDTOS.stream().peek(i -> {
