@@ -14,6 +14,7 @@ public class StreamUtils {
 
     /**
      * stream forEach 带下标
+     * 可获取遍历的下标
      *
      * @param <T>        泛型 <类型>
      * @param startIndex 开始遍历的索引
