@@ -74,8 +74,8 @@ public class ShallowAndDeepCopy {
         oos.writeObject(source);
         oos.close();
 
-        ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
-        ObjectInputStream ois = new ObjectInputStream(bais);
+        ByteArrayInputStream bis = new ByteArrayInputStream(baos.toByteArray());
+        ObjectInputStream ois = new ObjectInputStream(bis);
         T desc = (T) ois.readObject();
         ois.close();
 
