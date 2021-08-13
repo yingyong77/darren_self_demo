@@ -14,11 +14,17 @@ import java.util.concurrent.ArrayBlockingQueue;
  * ArrayBlockingQueue是一个阻塞式的队列，继承自{@link java.util.AbstractQueue},
  * 间接的实现了Queue接口和Collection接口。
  * 底层以数组的形式保存数据(实际上可看作一个循环数组)。常用的操作包括 add，offer，put，remove，poll，take，peek。
+ * <p>
+ * 阻塞队列
+ * 阻塞的意思是
+ * 1:当队列是空的时从队列获取元素的操作会被阻塞
+ * 2:当队列是满时,往队列中添加元素的操作会被阻塞
+ * 面对生产者消费者模型时。。如果不适用阻塞队列那么就必须额外使用同步队列和线程唤醒策略。。
  *
  * @author : darren
  * @date : 2021/8/1
  */
-public class ConcurrentLinkedQueueTest {
+public class ArrayBlockingQueueTest {
 
     private static ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(500);
 

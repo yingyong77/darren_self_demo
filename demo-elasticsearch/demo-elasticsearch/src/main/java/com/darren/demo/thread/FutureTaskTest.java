@@ -45,7 +45,6 @@ public class FutureTaskTest {
 
         String value = "";
         Future<String> future1 = fixedThreadPool.submit(() -> {
-
         }, "ttttt");
         try {
             value = future1.get();
@@ -72,7 +71,7 @@ public class FutureTaskTest {
         //3:直接配合Thread使用  因为FutureTask 本身也是个runnable
         Thread thread = new Thread(futureTaskOfCallable);
         thread.start();
-
+        
     }
 
 

@@ -1,5 +1,6 @@
 package com.darren.demo.thread;
 
+import io.netty.util.concurrent.DefaultThreadFactory;
 import lombok.SneakyThrows;
 
 import java.util.concurrent.*;
@@ -72,7 +73,7 @@ public class ThreadPoolUtil {
      * @return
      */
     static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
-        return new ScheduledThreadPoolExecutor(corePoolSize);
+        return new ScheduledThreadPoolExecutor(corePoolSize, new DefaultThreadFactory("pool--darren--"));
     }
 
 
