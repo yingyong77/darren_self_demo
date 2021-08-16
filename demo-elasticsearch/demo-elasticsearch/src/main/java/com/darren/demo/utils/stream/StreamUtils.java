@@ -1,4 +1,4 @@
-package com.darren.demo.utils;
+package com.darren.demo.utils.stream;
 
 import java.util.Objects;
 import java.util.function.BiConsumer;

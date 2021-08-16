@@ -1,6 +1,6 @@
 package com.darren.demo;
 
-import com.darren.demo.utils.StreamUtils;
+import com.darren.demo.utils.stream.StreamUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
