@@ -1,10 +1,15 @@
 package com.darren.demo.utils.stream;
 
-import org.junit.jupiter.api.Test;
+import com.darren.demo.esIndex.DemoElasticsearchApplication;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.OptionalInt;
 import java.util.Random;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * {@link java.util.stream.IntStream}
@@ -12,10 +17,53 @@ import java.util.stream.IntStream;
  * @author : darren
  * @date : 2021/8/14
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest(classes = DemoElasticsearchApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class IntStreamDemo {
 
+    /**
+     * 用户调试Stream方法的 操作 观察
+     */
     @Test
-    private void test1ofIntStream() {
+    public void test1ofIntStream0() {
+        Stream<String> stream = Stream.of("11", "22", "33");
+//        //head
+//        stream.forEach(x -> {
+//            System.out.println("xxxxxxx1->" + x);
+//        });
+
+        Stream<String> stream1 = stream.map(y -> {
+            System.out.println("yyyyyyy->" + y);
+            return y;
+        });
+
+        stream1.forEach(z -> {
+            System.out.println("zzzzz->" + z);
+        });
+
+    }
+
+    @Test
+    public void test1ofIntStream0OfInt() {
+        IntStream stream = IntStream.of(1, 2, 3);
+//        //head
+//        stream.forEach(x -> {
+//            System.out.println("xxxxxxx1->" + x);
+//        });
+
+        IntStream stream1 = stream.map(y -> {
+            System.out.println("yyyyyyy->" + y);
+            return y;
+        });
+
+        stream1.forEach(z -> {
+            System.out.println("zzzzz->" + z);
+        });
+
+    }
+
+    @Test
+    public void test1ofIntStream() {
 
         IntStream intStream = IntStream.of(1, 2, 3);
         IntStream intStream1 = IntStream.builder().add(1).add(2).build();
@@ -46,7 +94,7 @@ public class IntStreamDemo {
      * filter/map/flatMap/peek
      */
     @Test
-    private void test2ofIntStream() {
+    public void test2ofIntStream() {
         IntStream intStream = IntStream.rangeClosed(1, 10);
 
 //        filter
@@ -61,13 +109,15 @@ public class IntStreamDemo {
     /**
      *
      */
-    private void test3ofIntStream() {
+    @Test
+    public void test3ofIntStream() {
     }
 
     /**
      * forEach / forEachOrdered
      */
-    private void test4ofIntStream() {
+    @Test
+    public void test4ofIntStream() {
 
         IntStream intStream = IntStream.of(6, 1, 3, 2, 5, 4).parallel();
         intStream.forEach(x -> System.out.println("forEach->" + x));
@@ -79,7 +129,7 @@ public class IntStreamDemo {
      * reduce / collect
      */
     @Test
-    private void test5ofIntStream() {
+    public void test5ofIntStream() {
         IntStream intStream = IntStream.of(6, 1, 3, 2, 5, 4);
         OptionalInt optional = intStream.reduce((x, y) -> {
             System.out.println("x->" + x + ", y->" + y);

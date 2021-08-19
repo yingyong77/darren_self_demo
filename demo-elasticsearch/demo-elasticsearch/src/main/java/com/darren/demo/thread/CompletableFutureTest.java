@@ -14,6 +14,9 @@ import java.util.concurrent.ForkJoinPool;
  */
 public class CompletableFutureTest {
 
+    /**
+     *
+     */
     @SneakyThrows({InterruptedException.class, ExecutionException.class})
     @Test
     public void test1() {
