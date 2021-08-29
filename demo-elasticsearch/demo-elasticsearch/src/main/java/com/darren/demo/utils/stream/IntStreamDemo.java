@@ -1,6 +1,6 @@
 package com.darren.demo.utils.stream;
 
-import com.darren.demo.esIndex.DemoElasticsearchApplication;
+import com.darren.demo.DemoElasticsearchApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -62,6 +62,8 @@ public class IntStreamDemo {
 
     }
 
+
+    //    ----------------------用法--------------
     @Test
     public void test1ofIntStream() {
 
@@ -107,13 +109,6 @@ public class IntStreamDemo {
     }
 
     /**
-     *
-     */
-    @Test
-    public void test3ofIntStream() {
-    }
-
-    /**
      * forEach / forEachOrdered
      */
     @Test
@@ -135,7 +130,7 @@ public class IntStreamDemo {
             System.out.println("x->" + x + ", y->" + y);
             return x + y;
         });
-        System.out.println("result->" + optional.orElse(0));
+        System.out.println("result->" + optional.getAsInt());
 
         intStream.collect(() -> {
             Random random = new Random();
