@@ -32,7 +32,7 @@ public class EchoServer {
             return;
         }
         int port = Integer.parseInt(args[0]);
-        new EchoServer(port).start();
+        new EchoServer(7077).start();
     }
 
     /**
@@ -48,7 +48,7 @@ public class EchoServer {
                     .localAddress(new InetSocketAddress(port))
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
-                        protected void initChannel(SocketChannel ch) throws Exception {
+                        protected void initChannel(SocketChannel ch) {
                             ch.pipeline().addLast(serverHandler);
                         }
                     });
