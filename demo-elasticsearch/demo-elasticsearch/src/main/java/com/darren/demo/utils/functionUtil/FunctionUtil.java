@@ -66,7 +66,9 @@ public class FunctionUtil {
     private void functionOfPredicateTest() {
 
         //判断大于5的值
-        Predicate<Integer> predicate = integer -> integer > 5;
+        Predicate<Integer> predicate = (i) -> {
+            return i > 5;
+        };
         boolean boolean1 = predicate.test(1);
 
         List<Integer> integerList = Stream.of(1, 2, 3).filter(predicate).collect(Collectors.toList());
