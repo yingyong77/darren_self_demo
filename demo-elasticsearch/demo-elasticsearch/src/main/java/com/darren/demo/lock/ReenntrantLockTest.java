@@ -6,6 +6,8 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * 可重入的独占锁。。
  * 分为公平锁与非公平锁
+ * <p>
+ * 非公平提现在抢夺期间 不体现在提现等待之后处于同步队列期间之后的释放
  *
  * @author : darren
  * @date : 2020/6/9
