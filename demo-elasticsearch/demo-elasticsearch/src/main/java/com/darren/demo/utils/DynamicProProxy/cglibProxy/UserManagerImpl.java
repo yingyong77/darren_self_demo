@@ -1,4 +1,4 @@
-package com.darren.demo.utils.DynamicProProxy.other;
+package com.darren.demo.utils.DynamicProProxy.cglibProxy;
 
 /**
  * @author : darren

@@ -41,7 +41,7 @@ public final class $Proxy0 extends Proxy implements CommonFunction {
             //看看这儿静态块儿里面有什么，是不是找到了giveMoney方法。请记住giveMoney通过反射得到的名字m3，其他的先不管
             m1 = Class.forName("java.lang.Object").getMethod("equals", new Class[]{Class.forName("java.lang.Object")});
             m2 = Class.forName("java.lang.Object").getMethod("toString", new Class[0]);
-            m3 = Class.forName("proxy.Person").getMethod("giveMoney", new Class[0]);
+            m3 = Class.forName("proxy.Person").getMethod("doWork", new Class[0]);
             m0 = Class.forName("java.lang.Object").getMethod("hashCode", new Class[0]);
             //return;
         } catch (NoSuchMethodException localNoSuchMethodException) {
@@ -52,7 +52,7 @@ public final class $Proxy0 extends Proxy implements CommonFunction {
     }
 
     /**
-     * 这里调用代理对象的giveMoney方法，直接就调用了InvocationHandler中的invoke方法，并把m3传了进去。
+     * 这里调用代理对象的doWork方法，直接就调用了InvocationHandler中的invoke方法，并把m3传了进去。
      * this.h.invoke(this, m3, null);这里简单，明了。
      * 来，再想想，代理对象持有一个InvocationHandler对象，InvocationHandler对象持有一个被代理的对象，
      * 再联系到InvacationHandler中的invoke方法。嗯，就是这样。
