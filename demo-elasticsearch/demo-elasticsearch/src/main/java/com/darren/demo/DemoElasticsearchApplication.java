@@ -2,6 +2,7 @@ package com.darren.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 @EnableElasticsearchRepositories
@@ -9,7 +10,9 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 public class DemoElasticsearchApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoElasticsearchApplication.class, args);
+
+        //org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext
+        ConfigurableApplicationContext context = SpringApplication.run(DemoElasticsearchApplication.class, args);
     }
 
 }
