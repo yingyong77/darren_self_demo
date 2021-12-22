@@ -1,4 +1,4 @@
-package com.util.test;
+package com.util.word;
 
 import com.darren.demo.DemoElasticsearchApplication;
 import com.documents4j.api.DocumentType;
