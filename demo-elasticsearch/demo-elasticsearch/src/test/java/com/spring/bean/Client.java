@@ -19,9 +19,12 @@ public class Client {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Appconfig.class);
 
+//        context.register(Appconfig.class);
+//        context.getEnvironment().setRequiredProperties("bmlxx");
+//        context.refresh();
+
         context.registerShutdownHook();
 
-        System.out.println();
-
+        System.out.println(context.getBean(AnnotationConfigScanBean.class));
     }
 }

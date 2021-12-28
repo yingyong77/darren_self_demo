@@ -1,6 +1,7 @@
 package com.spring.bean;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * @date : 2021/12/13
  */
 @Configuration
+@ComponentScan(basePackageClasses = {AnnotationConfigScanBean.class})
 public class Appconfig {
 
     /**
@@ -17,6 +19,8 @@ public class Appconfig {
      * @return
      */
     @Bean
+    //@Lazy
+    //@Scope("prototype")
     public MyBean myBean() {
         return new MyBean();
     }
