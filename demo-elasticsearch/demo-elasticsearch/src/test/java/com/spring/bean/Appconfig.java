@@ -13,8 +13,9 @@ import org.springframework.core.env.Environment;
  * @date : 2021/12/13
  */
 @Configuration
-@ComponentScan(basePackageClasses = {AnnotationConfigScanBean.class})
+//@ComponentScan(basePackageClasses = {AnnotationConfigScanBean.class})
 //会注册一个AnnotationAwareAspectJAutoProxyCreator
+@ComponentScan({"com.spring"})
 @EnableAspectJAutoProxy
 public class Appconfig {
 

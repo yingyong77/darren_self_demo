@@ -66,7 +66,8 @@ public class ResourceResolverUtil {
 
     //@PropertySource 和 @ConfigurationProperties 组合使用，可以将属性文件与一个Java类  // 主机名
     //    @Value("${host:localhost}")
-    //    public String host;  @ConfigurationProperties(SPRING_DS_PROPERTY)
+    //    public String host;
+    //    @ConfigurationProperties(SPRING_DS_PROPERTY)
 
     /**
      * classs getResource 方式 底层还是要去 classLoader

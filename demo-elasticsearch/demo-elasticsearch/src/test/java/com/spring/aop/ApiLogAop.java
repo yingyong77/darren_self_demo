@@ -1,4 +1,4 @@
-package com.spring.bean;
+package com.spring.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -25,7 +25,7 @@ import java.util.Objects;
 public class ApiLogAop {
 
 
-    @Pointcut(value = "execution(public * com.spring.bean.AnnotationConfigScanBean.*(..))")
+    @Pointcut(value = "execution(public * com.spring.aop.SpringAopBean.test(..))")
     public void controllerLog() {
 
     }
