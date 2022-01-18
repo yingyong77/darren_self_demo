@@ -23,7 +23,7 @@ public class Client {
 //        context.getEnvironment().setRequiredProperties("bmlxx");
 //        context.refresh();
 
-        context.registerShutdownHook();
+        //context.registerShutdownHook();
 
         System.out.println(context.getBean(AnnotationConfigScanBean.class));
     }

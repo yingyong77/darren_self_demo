@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SpringAopBean {
     
+
     public void test() {
         System.out.println("dddddddd");
     }

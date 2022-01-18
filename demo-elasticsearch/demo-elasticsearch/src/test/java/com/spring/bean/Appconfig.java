@@ -19,7 +19,6 @@ import org.springframework.core.env.Environment;
 @EnableAspectJAutoProxy
 public class Appconfig {
 
-
     /**
      * 是直接可以使用@Autowired进行注入的 注入的applicationContext是从缓存resolvableDependencies拿的
      */

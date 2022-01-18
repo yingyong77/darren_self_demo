@@ -47,3 +47,4 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.skytech.edata.repo.common.model
   type-handlers-package: com.skytech.edata.repo.mysql.base
+
