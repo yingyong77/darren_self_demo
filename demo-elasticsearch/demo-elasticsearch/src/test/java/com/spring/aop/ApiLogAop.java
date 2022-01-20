@@ -40,6 +40,25 @@ public class ApiLogAop {
      */
     @Before("controllerLog()")
     public void doBefore(JoinPoint joinPoint) {
+//         logger.info("====doBefore方法进入了====");
+//
+//        // 获取签名
+//        Signature signature = joinPoint.getSignature();
+//        // 获取切入的包名
+//        String declaringTypeName = signature.getDeclaringTypeName();
+//        // 获取即将执行的方法名
+//        String funcName = signature.getName();
+//        logger.info("即将执行方法为: {}，属于{}包", funcName, declaringTypeName);
+//
+//        // 也可以用来记录一些信息，比如获取请求的url和ip
+//        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+//        HttpServletRequest request = attributes.getRequest();
+//        // 获取请求url
+//        String url = request.getRequestURL().toString();
+//        // 获取请求ip
+//        String ip = request.getRemoteAddr();
+//        logger.info("用户请求的url为：{}，ip地址为：{}", url, ip);
+
         HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes())).getRequest();
 
         log.info("IP:" + request.getRemoteAddr() + "-->method begin-->" + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());

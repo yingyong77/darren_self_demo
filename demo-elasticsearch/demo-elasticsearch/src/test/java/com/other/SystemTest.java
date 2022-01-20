@@ -12,7 +12,7 @@ public class SystemTest {
 
     public static void main(String[] args) {
         String key = "java.vm.name";
-
+        
         System.out.println(SystemPropertyUtil.get("java.vm.name") + "---" + System.getProperty(key));
     }
 }
