@@ -207,14 +207,14 @@
 
     <build>
         <plugins>
-            <!--            <plugin>-->
-            <!--                <groupId>org.springframework.boot</groupId>-->
-            <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-            <!--                <configuration>-->
-            <!--                    <mainClass>com.darren.demo.DemoElasticsearchApplication</mainClass>-->
-            <!--                    <layout>ZIP</layout>-->
-            <!--                </configuration>-->
-            <!--            </plugin>-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.darren.demo.DemoElasticsearchApplication</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
+            </plugin>
 
             <!--            <plugin>-->
             <!--                <groupId>org.mybatis.generator</groupId>-->
