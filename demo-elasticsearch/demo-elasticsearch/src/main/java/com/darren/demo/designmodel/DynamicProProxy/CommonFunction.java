@@ -1,4 +1,4 @@
-package com.darren.demo.utils.DynamicProProxy;
+package com.darren.demo.designmodel.DynamicProProxy;
 
 /**
  * @author : darren

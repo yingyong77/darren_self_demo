@@ -1,4 +1,4 @@
-package com.darren.demo.utils.DynamicProProxy;
+package com.darren.demo.designmodel.DynamicProProxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

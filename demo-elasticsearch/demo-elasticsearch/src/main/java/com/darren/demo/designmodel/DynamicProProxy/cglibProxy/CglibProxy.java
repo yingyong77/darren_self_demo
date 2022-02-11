@@ -1,4 +1,4 @@
-package com.darren.demo.utils.DynamicProProxy.cglibProxy;
+package com.darren.demo.designmodel.DynamicProProxy.cglibProxy;
 
 
 import net.sf.cglib.proxy.Enhancer;

@@ -1,4 +1,4 @@
-package com.darren.demo.utils.DynamicProProxy;
+package com.darren.demo.designmodel.DynamicProProxy;
 
 /**
  * @author : darren
@@ -10,5 +10,5 @@ public class WorkInstance implements CommonFunction {
     public void doWork() {
 
     }
-    
+
 }
