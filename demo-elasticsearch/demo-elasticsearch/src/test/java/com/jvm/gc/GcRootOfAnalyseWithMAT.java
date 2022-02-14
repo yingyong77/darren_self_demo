@@ -7,11 +7,13 @@ import java.util.List;
 
 /**
  * 演示Gc Roots
+ * <p>
+ * 配合MAt演示
  *
  * @author : darren
  * @date : 2022/2/13
  */
-public class GcRootDemo {
+public class GcRootOfAnalyseWithMAT {
 
     public static void main(String[] args) throws IOException {
         //list1 引用的根对象是根对象

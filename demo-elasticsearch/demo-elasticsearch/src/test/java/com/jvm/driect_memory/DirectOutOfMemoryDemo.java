@@ -6,6 +6,8 @@ import java.util.List;
 
 /**
  * 直接内存溢出
+ * <p>
+ * java.lang.OutOfMemoryError: Direct buffer memory
  *
  * @author : darren
  * @date : 2022/2/13

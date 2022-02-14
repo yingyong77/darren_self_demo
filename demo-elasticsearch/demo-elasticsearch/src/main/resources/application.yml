@@ -6,6 +6,18 @@ digger:
 
 
 spring:
+  redis:
+    database: 22
+    host: r-bp1a57565defe5f4.redis.rds.aliyuncs.com
+    port: 6379
+    password: yj1OC91bsQbv7zyK
+    lettuce:
+      pool:
+        max-active: 50
+        max-idle: 20
+        min-idle: 10
+        max-wait: 5000
+    timeout: 5000
   data:
     jest:
       uri: http://192.168.1.71:9200
