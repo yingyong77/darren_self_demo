@@ -7,10 +7,10 @@ digger:
 
 spring:
   redis:
-    database: 22
-    host: r-bp1a57565defe5f4.redis.rds.aliyuncs.com
+    database: 2
+    host: 101.35.90.82
     port: 6379
-    password: yj1OC91bsQbv7zyK
+    password: darren
     lettuce:
       pool:
         max-active: 50

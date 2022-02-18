@@ -15,7 +15,7 @@ import java.util.List;
  * @author : darren
  * @date : 2022/2/13
  */
-public class SoftReferenceDemo {
+class SoftReferenceDemo {
 
     private static int _4MB = 4 * 1024 * 1024;
 
