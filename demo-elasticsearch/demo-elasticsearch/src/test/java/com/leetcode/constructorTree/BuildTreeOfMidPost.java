@@ -20,7 +20,14 @@ public class BuildTreeOfMidPost {
      */
     int post_idx;
 
+    /**
+     *
+     */
     int[] postorder;
+
+    /**
+     *
+     */
     int[] inorder;
 
     /**
