@@ -20,6 +20,8 @@ public class TestByteBufferString {
         //wrap方法
         ByteBuffer buffer3 = ByteBuffer.wrap("darren".getBytes());
 
+//        ---------------------------------------------------------------------------------------------------------
+
         //-----------byteBuffer转字符串-----------
         String str1 = StandardCharsets.UTF_8.decode(buffer2).toString();
 

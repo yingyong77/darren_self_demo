@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 非阻塞模式下
+ *
  * @author : darren
  * @date : 2022/3/7
  */
