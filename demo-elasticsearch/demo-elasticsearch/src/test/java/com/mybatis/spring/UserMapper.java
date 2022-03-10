@@ -1,4 +1,4 @@
-package com.mybatis;
+package com.mybatis.spring;
 
 import org.apache.ibatis.annotations.Mapper;
 

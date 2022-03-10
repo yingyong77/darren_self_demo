@@ -1,4 +1,4 @@
-package com.mybatis;
+package com.mybatis.spring;
 
 import com.darren.demo.DemoElasticsearchApplication;
 import org.apache.ibatis.session.SqlSession;
