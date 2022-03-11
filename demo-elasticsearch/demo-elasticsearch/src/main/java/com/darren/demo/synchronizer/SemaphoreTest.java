@@ -21,7 +21,7 @@ import java.util.concurrent.Semaphore;
 public class SemaphoreTest {
 
     //    //创建一个semaphore实例
-    private static Semaphore semaphore = new Semaphore(0);
+    private static final Semaphore semaphore = new Semaphore(0);
 //
 //    public static void main(String[] args) {
 //

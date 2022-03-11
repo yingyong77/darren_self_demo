@@ -7,10 +7,10 @@ package com.jvm.stack;
  * @date : 2022/2/9
  */
 class A {
-};
+}
 
 class B {
-};
+}
 
 public class Demo4 {
 

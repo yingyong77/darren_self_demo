@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
  */
 public class CyclicBarrierTest {
 
-    private static CyclicBarrier cyclicBarrier = new CyclicBarrier(2, new Runnable() {
+    private static final CyclicBarrier cyclicBarrier = new CyclicBarrier(2, new Runnable() {
         @Override
         public void run() {
             System.out.println(Thread.currentThread() + " task1 merge result");
@@ -97,7 +97,7 @@ public class CyclicBarrierTest {
         });
 
         executorService.shutdown();
-        
+
     }
 
 

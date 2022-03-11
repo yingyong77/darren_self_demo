@@ -8,7 +8,7 @@ class Value {
 }
 
 public class Test {
-    public static void main(String argv[]) {
+    public static void main(String[] argv) {
         Test t = new Test();
         t.first();
     }

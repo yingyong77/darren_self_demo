@@ -19,7 +19,7 @@ public class Server implements Runnable {
 
     private Selector selector;
 
-    private ByteBuffer buffer = ByteBuffer.allocate(1024);
+    private final ByteBuffer buffer = ByteBuffer.allocate(1024);
 
     public Server(int port) {
         try {

@@ -20,14 +20,14 @@ import java.util.stream.Collectors;
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class ThreadLocal {
     //another写法 java8.0 DateTimeFormatter
-    private java.lang.ThreadLocal<DateFormat> dateFormatThreadLocal = new java.lang.ThreadLocal<DateFormat>() {
+    private final java.lang.ThreadLocal<DateFormat> dateFormatThreadLocal = new java.lang.ThreadLocal<DateFormat>() {
         @Override
         protected SimpleDateFormat initialValue() {
             return new SimpleDateFormat("yyyy-MM-dd");
         }
     };
-      
-    private java.lang.ThreadLocal<SimpleDateFormat> dateFormat = java.lang.ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd"));
+
+    private final java.lang.ThreadLocal<SimpleDateFormat> dateFormat = java.lang.ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd"));
 
 
     /**

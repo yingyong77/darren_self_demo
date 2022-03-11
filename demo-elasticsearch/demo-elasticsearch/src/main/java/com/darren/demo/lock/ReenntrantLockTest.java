@@ -17,12 +17,12 @@ public class ReenntrantLockTest {
     /**
      * 线程不安全的arrayList
      */
-    private ArrayList<String> array = new ArrayList<>();
+    private final ArrayList<String> array = new ArrayList<>();
 
     /**
      * 独占锁
      */
-    private volatile ReentrantLock lock = new ReentrantLock(Boolean.TRUE);
+    private final ReentrantLock lock = new ReentrantLock(Boolean.TRUE);
 
     public void add(String e) {
         lock.lock();

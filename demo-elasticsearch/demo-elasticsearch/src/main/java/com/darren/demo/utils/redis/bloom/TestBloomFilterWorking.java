@@ -21,7 +21,7 @@ public class TestBloomFilterWorking {
     private static final int insertions = 1000000;
 
     //期望的误判率
-    private static double fpp = 0.01;
+    private static final double fpp = 0.01;
 
     public static void main(String[] args) {
 

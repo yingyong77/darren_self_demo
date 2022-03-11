@@ -26,7 +26,7 @@ public class TradeService {
      * 状态 维持共享变量可见性
      */
     @Getter
-    private volatile int state = 0;
+    private final int state = 0;
 
     private static final Unsafe unsafe = UnsafeInstance.reflectUnsafe();
 
@@ -40,7 +40,7 @@ public class TradeService {
     /**
      * 重入锁
      */
-    private ReentrantLock lock = new ReentrantLock(Boolean.TRUE);
+    private final ReentrantLock lock = new ReentrantLock(Boolean.TRUE);
 
     /**
      * 当前线程是谁

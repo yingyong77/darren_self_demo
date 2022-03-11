@@ -12,7 +12,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class CopyOnWriteArrayListTest {
 
-    private static volatile CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
+    private static final CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
 
     public static void main(String[] args) {
 //        //线程安全List

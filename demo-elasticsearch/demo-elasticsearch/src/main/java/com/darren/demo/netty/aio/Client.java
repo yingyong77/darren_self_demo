@@ -12,7 +12,7 @@ import java.nio.channels.AsynchronousSocketChannel;
  */
 public class Client implements Runnable {
 
-    private AsynchronousSocketChannel channel;
+    private final AsynchronousSocketChannel channel;
 
     @SneakyThrows
     public Client() {

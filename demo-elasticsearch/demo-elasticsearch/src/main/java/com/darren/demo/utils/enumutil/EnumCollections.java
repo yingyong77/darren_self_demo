@@ -46,7 +46,7 @@ public class EnumCollections {
         ONE_KEY_MODE(8);
 
         @Getter
-        private int type;
+        private final int type;
 
         DeviceType(int type) {
             this.type = type;
@@ -69,7 +69,7 @@ public class EnumCollections {
         CHANGE_LIST(4);
 
         @Getter
-        private int value;
+        private final int value;
 
         DataComparerResult(int value) {
             this.value = value;
@@ -90,7 +90,7 @@ public class EnumCollections {
         UPDATE_LIST_NEW,
         UPDATE_LIST_OLD,
         // 数据系列改变（内部）
-        DELETE_LIST;
+        DELETE_LIST
     }
 
     /**
@@ -105,7 +105,7 @@ public class EnumCollections {
         ERROR(2);
 
         @Getter
-        private int level;
+        private final int level;
 
         MessageLevel(int level) {
             this.level = level;
@@ -242,11 +242,11 @@ public class EnumCollections {
         COMPLETED_ONE_KEY_TASK(DeviceType.ONE_KEY_MODE, MessageLevel.NORMAL, 506);
 
         @Getter
-        private DeviceType type;
+        private final DeviceType type;
         @Getter
-        private MessageLevel level;
+        private final MessageLevel level;
         @Getter
-        private int code;
+        private final int code;
 
         MsgCode(DeviceType type, MessageLevel level, int code) {
             this.type = type;
@@ -275,9 +275,9 @@ public class EnumCollections {
         MESSAGE_1(DeviceType.MESSAGE, 3001, 3500),
         PLATFORM_1(DeviceType.PLATFORM, 3501, 4000);
 
-        private DeviceType type;
-        private int start;
-        private int end;
+        private final DeviceType type;
+        private final int start;
+        private final int end;
 
     }
 
@@ -293,8 +293,8 @@ public class EnumCollections {
         FINISHED(6, "finishedCount"),
         HISTORY_TASK(7, "historyTaskCount");
 
-        private int state;
-        private String msg;
+        private final int state;
+        private final String msg;
 
         @Override
         public int compare(Integer t) {

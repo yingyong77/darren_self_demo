@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -59,7 +58,7 @@ public class PropertiesDeclareUtil {
         Map<String, Object> map = new LinkedHashMap<>();
 
 
-        List<Field> subFields = Arrays.asList(object.getClass().getDeclaredFields());
+        Field[] subFields = object.getClass().getDeclaredFields();
 
         for (Field field : subFields) {
             field.setAccessible(Boolean.TRUE);

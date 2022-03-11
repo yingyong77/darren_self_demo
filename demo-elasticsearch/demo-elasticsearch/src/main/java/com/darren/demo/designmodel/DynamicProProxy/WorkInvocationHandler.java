@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
  */
 public class WorkInvocationHandler<T> implements InvocationHandler {
 
-    private T target;
+    private final T target;
 
     public WorkInvocationHandler(T target) {
         this.target = target;

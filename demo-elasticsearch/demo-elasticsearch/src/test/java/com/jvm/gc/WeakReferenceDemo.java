@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class WeakReferenceDemo {
 
-    private static int _4MB = 4 * 1024 * 1024;
+    private static final int _4MB = 4 * 1024 * 1024;
 
     public static void main(String[] args) {
 

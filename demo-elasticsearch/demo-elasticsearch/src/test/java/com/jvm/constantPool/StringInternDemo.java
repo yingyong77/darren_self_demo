@@ -14,7 +14,7 @@ public class StringInternDemo {
     public static void main(String[] args) {
 
         //1:创建自负床常量ldc时
-        String s = new String("a") + new String("b");
+        String s = "a" + "b";
 
         String s2 = s.intern(); //将这个堆中对象尝试方式串池，
         // 有则不会放入 s还是指向堆的对象

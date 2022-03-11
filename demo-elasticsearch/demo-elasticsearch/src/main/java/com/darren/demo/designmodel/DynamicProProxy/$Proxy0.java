@@ -13,10 +13,10 @@ import java.lang.reflect.UndeclaredThrowableException;
  * @date : 2021/7/14
  */
 public final class $Proxy0 extends Proxy implements CommonFunction {
-    private static Method m1;
-    private static Method m2;
-    private static Method m3;
-    private static Method m0;
+    private static final Method m1;
+    private static final Method m2;
+    private static final Method m3;
+    private static final Method m0;
 
     /**
      * 注意这里是生成代理类的构造方法，方法参数为InvocationHandler类型，看到这，是不是就有点明白
@@ -39,10 +39,10 @@ public final class $Proxy0 extends Proxy implements CommonFunction {
     static {
         try {
             //看看这儿静态块儿里面有什么，是不是找到了giveMoney方法。请记住giveMoney通过反射得到的名字m3，其他的先不管
-            m1 = Class.forName("java.lang.Object").getMethod("equals", new Class[]{Class.forName("java.lang.Object")});
-            m2 = Class.forName("java.lang.Object").getMethod("toString", new Class[0]);
-            m3 = Class.forName("proxy.Person").getMethod("doWork", new Class[0]);
-            m0 = Class.forName("java.lang.Object").getMethod("hashCode", new Class[0]);
+            m1 = Class.forName("java.lang.Object").getMethod("equals", Class.forName("java.lang.Object"));
+            m2 = Class.forName("java.lang.Object").getMethod("toString");
+            m3 = Class.forName("proxy.Person").getMethod("doWork");
+            m0 = Class.forName("java.lang.Object").getMethod("hashCode");
             //return;
         } catch (NoSuchMethodException localNoSuchMethodException) {
             throw new NoSuchMethodError(localNoSuchMethodException.getMessage());

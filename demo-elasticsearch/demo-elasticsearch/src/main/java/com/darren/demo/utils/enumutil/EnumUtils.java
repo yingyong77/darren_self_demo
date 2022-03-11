@@ -13,7 +13,7 @@ public class EnumUtils {
          * @author Xiaguangmin
          * @date 2021/5/10 11:05
          */
-        public int compare(@NotNull T t);
+        int compare(@NotNull T t);
     }
 
     public static <T extends Compare<V>, V> T getEnum(Class<T> clazz, @NotNull V value) {

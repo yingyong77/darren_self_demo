@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
  */
 public class CountDownLatchTest {
 
-    private static CountDownLatch countDownLatch = new CountDownLatch(3);
+    private static final CountDownLatch countDownLatch = new CountDownLatch(3);
 
     public static void main(String[] args) throws InterruptedException {
 

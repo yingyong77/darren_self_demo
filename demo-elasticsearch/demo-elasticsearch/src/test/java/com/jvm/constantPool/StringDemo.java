@@ -19,7 +19,7 @@ public class StringDemo {
         System.out.println(s3 == s5);  //true
         System.out.println(s3 == s6);  //true
 
-        String x2 = new String("c") + new String("d");
+        String x2 = "c" + "d";
         String x1 = "cd";
         x2.intern();   //此时已经有了
 

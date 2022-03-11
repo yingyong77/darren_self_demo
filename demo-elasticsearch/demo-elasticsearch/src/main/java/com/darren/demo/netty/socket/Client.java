@@ -12,8 +12,8 @@ import java.net.Socket;
  */
 public class Client {
 
-    private static int PORT = 8379;
-    private static String IP = "127.0.0.1";
+    private static final int PORT = 8379;
+    private static final String IP = "127.0.0.1";
 
     public static void main(String[] args) {
         BufferedReader bufferedReader = null;

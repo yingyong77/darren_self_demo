@@ -23,5 +23,5 @@ public class Demo3 {
 
 
 class Student {
-    private byte[] big = new byte[1024 * 1024];
+    private final byte[] big = new byte[1024 * 1024];
 }

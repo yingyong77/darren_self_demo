@@ -15,7 +15,7 @@ public class Singleton2 {
 
     /* 此处使用一个内部类来维护单例 */
     private static class SingletonFactory {
-        private static Singleton2 instance = new Singleton2();
+        private static final Singleton2 instance = new Singleton2();
     }
 
     /* 获取实例 */

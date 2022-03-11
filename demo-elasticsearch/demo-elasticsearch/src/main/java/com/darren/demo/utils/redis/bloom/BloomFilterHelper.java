@@ -13,9 +13,9 @@ import java.nio.charset.Charset;
  * @author jack xu
  */
 public class BloomFilterHelper<T> {
-    private int numHashFunctions;
-    private int bitSize;
-    private Funnel<T> funnel;
+    private final int numHashFunctions;
+    private final int bitSize;
+    private final Funnel<T> funnel;
 
     public BloomFilterHelper(int expectedInsertions) {
         this.funnel = (Funnel<T>) Funnels.stringFunnel(Charset.defaultCharset());

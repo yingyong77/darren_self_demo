@@ -20,7 +20,7 @@ public class TwoSum {
      * @param target
      * @return
      */
-    public static int[] twoSum(int nums[], int target) {
+    public static int[] twoSum(int[] nums, int target) {
 
         int n = nums.length;
         for (int i = 0; i < n; i++) {
@@ -40,7 +40,7 @@ public class TwoSum {
      * @param target
      * @return
      */
-    public static int[] twoSum1(int nums[], int target) {
+    public static int[] twoSum1(int[] nums, int target) {
         Map<Integer, Integer> hashTable = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (hashTable.containsKey(target - nums[i])) {

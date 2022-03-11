@@ -17,7 +17,7 @@ import java.util.List;
  */
 class SoftReferenceDemo {
 
-    private static int _4MB = 4 * 1024 * 1024;
+    private static final int _4MB = 4 * 1024 * 1024;
 
     /**
      * 强引用

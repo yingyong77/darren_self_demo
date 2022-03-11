@@ -49,7 +49,7 @@ public class IntBufferTest {
         //将缓冲区的数据放入arr中
         intBuffer.get(arr1);
         for (Integer i : arr1) {
-            System.out.println(Integer.toString(i) + ",");
+            System.out.println(i + ",");
         }
 
         System.out.println("buufer1的可读数量：" + intBuffer1.remaining() + "dddd" + intBuffer1);
@@ -59,7 +59,7 @@ public class IntBufferTest {
         arr1 = new int[intBuffer1.remaining()];
         intBuffer1.get(arr1);
         for (Integer i : arr1) {
-            System.out.print(Integer.toString(i) + ",");
+            System.out.print(i + ",");
         }
     }
 }

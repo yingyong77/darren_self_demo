@@ -40,7 +40,7 @@ public class SimpleProxyTest {
 
         private CommonFunction commonFunction;
 
-        private WorkInstance workInstance = new WorkInstance();
+        private final WorkInstance workInstance = new WorkInstance();
 
         private CommonFunction getInstance() {
 

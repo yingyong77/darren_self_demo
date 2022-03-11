@@ -26,7 +26,7 @@ import java.util.concurrent.ArrayBlockingQueue;
  */
 public class ArrayBlockingQueueTest {
 
-    private static ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(500);
+    private static final ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(500);
 
     public static void main(String[] args) {
         /**

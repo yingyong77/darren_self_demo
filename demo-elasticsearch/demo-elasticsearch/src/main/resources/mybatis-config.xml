@@ -21,7 +21,9 @@
 
     <mappers>
         <!-- 加载前面编写的SQL语句的文件 -->
-        <mapper resource="properties/StudentMapper.xml"/>
+        <!--        <mapper resource="properties/PureStudentMapper.xml"/>-->
+        <!--        <mapper class="com.darren.demo.spring.mybatis.PureStudentMapper"/>-->
+        <package name="com.darren.demo.spring.mybatis"/>
     </mappers>
 
 </configuration>

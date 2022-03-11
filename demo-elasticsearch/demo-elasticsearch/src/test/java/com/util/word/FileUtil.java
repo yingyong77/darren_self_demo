@@ -7,7 +7,7 @@ public class FileUtil {
     /**
      * 验证字符串是否为正确路径名的正则表达式
      */
-    private static String matches = "[A-Za-z]:\\\\[^:?\"><*]*";
+    private static final String matches = "[A-Za-z]:\\\\[^:?\"><*]*";
 
     /**
      * 通过 sPath.matches(matches) 方法的返回值判断是否正确

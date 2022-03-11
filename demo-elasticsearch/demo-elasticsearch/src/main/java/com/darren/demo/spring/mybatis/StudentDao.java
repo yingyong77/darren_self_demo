@@ -11,7 +11,7 @@ import java.util.List;
 
 public class StudentDao {
 
-    private SqlSessionFactory sqlSessionFactory;
+    private final SqlSessionFactory sqlSessionFactory;
 
     public StudentDao(String configPath) throws IOException {
         InputStream inputStream = Resources.getResourceAsStream(configPath);

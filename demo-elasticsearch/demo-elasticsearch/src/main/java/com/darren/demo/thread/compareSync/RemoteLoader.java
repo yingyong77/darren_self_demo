@@ -16,6 +16,4 @@ public interface RemoteLoader {
         }
     }
 
-    ;
-
 }

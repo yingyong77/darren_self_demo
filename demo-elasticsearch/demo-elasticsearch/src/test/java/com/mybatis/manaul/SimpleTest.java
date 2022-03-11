@@ -27,7 +27,6 @@ public class SimpleTest {
         student.setGender(1);
         student.setScore(100);
         studentDao.addStudent(student);
-
     }
 
     @Test
