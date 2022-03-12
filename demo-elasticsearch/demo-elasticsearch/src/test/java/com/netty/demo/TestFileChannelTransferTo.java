@@ -7,6 +7,7 @@ import java.nio.channels.FileChannel;
 
 /**
  * 传输大文件的数据
+ * 零拷贝
  *
  * @author : darren
  * @date : 2022/3/7

@@ -6,6 +6,21 @@
     <!-- 配置文件信息 -->
     <properties resource="properties/db.properties"></properties>
 
+    <!--    开启二级缓存-->
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias alias="student" type="com.darren.demo.spring.mybatis.Student"/>
+    </typeAliases>
+
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="helperDialect" value="mysql"/>
+        </plugin>
+    </plugins>
+
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -19,11 +34,15 @@
         </environment>
     </environments>
 
+
     <mappers>
         <!-- 加载前面编写的SQL语句的文件 -->
-        <!--        <mapper resource="properties/PureStudentMapper.xml"/>-->
-        <!--        <mapper class="com.darren.demo.spring.mybatis.PureStudentMapper"/>-->
-        <package name="com.darren.demo.spring.mybatis"/>
+        <!--        <mapper resource="mapper/PureStudentMapper.xml"/>-->
+        <mapper class="com.darren.demo.spring.mybatis.PureStudentMapper"/>
+        <!--        <package name="com.darren.demo.spring.mybatis"/>-->
+        <mapper resource="mapper/StudentMapper.xml"/>
     </mappers>
 
 </configuration>
+
+

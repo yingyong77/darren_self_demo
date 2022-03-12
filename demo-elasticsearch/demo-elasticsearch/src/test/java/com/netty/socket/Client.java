@@ -12,7 +12,7 @@ import java.nio.charset.Charset;
 public class Client {
     public static void main(String[] args) throws IOException {
         SocketChannel socketChannel = SocketChannel.open();
-        socketChannel.connect(new InetSocketAddress("localhost", 8145));
+        socketChannel.connect(new InetSocketAddress("localhost", 8181));
         //测试粘包问题
         //socketChannel.write(Charset.defaultCharset().encode("hello\nworld\n"));
         //测试半包问题 服务器一次性读不了这么多数据 所以服务器每次扩容

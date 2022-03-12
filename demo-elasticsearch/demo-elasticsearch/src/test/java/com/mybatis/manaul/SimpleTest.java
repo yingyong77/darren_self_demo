@@ -32,7 +32,8 @@ public class SimpleTest {
     @Test
     public void findAllTest() {
         List<Student> all = studentDao.findAll();
-
         all.forEach(System.out::println);
     }
+
+   
 }

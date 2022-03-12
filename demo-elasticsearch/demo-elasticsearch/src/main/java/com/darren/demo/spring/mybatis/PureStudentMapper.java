@@ -1,7 +1,6 @@
 package com.darren.demo.spring.mybatis;
 
 import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -11,7 +10,6 @@ import java.util.List;
  * @author : darren
  * @date : 2022/3/11
  */
-@Mapper
 public interface PureStudentMapper {
 
     //往里面注册一个MappedStatement
@@ -25,4 +23,8 @@ public interface PureStudentMapper {
     List<Student> find(@Param("name") String name, @Param("major") String major);
 
     List<Student> findAllFromXml();
+
+    List<Student> batchFind(List<Integer> list);
+
+    Student findStuById(int studId);
 }
