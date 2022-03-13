@@ -15,11 +15,11 @@
         <typeAlias alias="student" type="com.darren.demo.spring.mybatis.Student"/>
     </typeAliases>
 
-    <plugins>
-        <plugin interceptor="com.github.pagehelper.PageInterceptor">
-            <property name="helperDialect" value="mysql"/>
-        </plugin>
-    </plugins>
+    <!--    <plugins>-->
+    <!--        <plugin interceptor="com.github.pagehelper.PageInterceptor">-->
+    <!--            <property name="helperDialect" value="mysql"/>-->
+    <!--        </plugin>-->
+    <!--    </plugins>-->
 
     <environments default="development">
         <environment id="development">
@@ -40,7 +40,7 @@
         <!--        <mapper resource="mapper/PureStudentMapper.xml"/>-->
         <mapper class="com.darren.demo.spring.mybatis.PureStudentMapper"/>
         <!--        <package name="com.darren.demo.spring.mybatis"/>-->
-        <mapper resource="mapper/StudentMapper.xml"/>
+        <!--        <mapper resource="mapper/StudentMapper.xml"/>-->
     </mappers>
 
 </configuration>

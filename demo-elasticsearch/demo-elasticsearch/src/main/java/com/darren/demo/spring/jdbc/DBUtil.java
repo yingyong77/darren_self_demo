@@ -1,5 +1,7 @@
 package com.darren.demo.spring.jdbc;
 
+import org.apache.ibatis.io.Resources;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -54,13 +56,12 @@ public class DBUtil {
         String password = null;
         try {
             // 将配置文件加载进内存
-            prop.load(this.getClass()
-                    .getResourceAsStream("DBConfig.properties"));
+            prop.load(Resources.getResourceAsStream("properties/db.properties"));
             // 设置Connection参数
-            driver = prop.getProperty("driver");
-            url = prop.getProperty("url");
-            username = prop.getProperty("username");
-            password = prop.getProperty("password");
+            driver = prop.getProperty("db.driver");
+            url = prop.getProperty("db.url");
+            username = prop.getProperty("db.user");
+            password = prop.getProperty("db.password");
             // 加载驱动程序
             Class.forName(driver);
             return DriverManager.getConnection(url, username, password);
