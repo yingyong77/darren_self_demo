@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--这里命名空间必须统一  与dao的必须保持统一   mybatis会去找-->
+<mapper namespace="com.darren.demo.spring.mybatis.PureStudentMapper">
+    <select id="findAllFromXml" resultType="com.darren.demo.spring.mybatis.Student">
+        SELECT *
+        FROM student;
+    </select>
+
+</mapper>

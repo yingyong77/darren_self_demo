@@ -40,7 +40,7 @@
         <!--        <mapper resource="mapper/PureStudentMapper.xml"/>-->
         <mapper class="com.darren.demo.spring.mybatis.PureStudentMapper"/>
         <!--        <package name="com.darren.demo.spring.mybatis"/>-->
-        <!--        <mapper resource="mapper/StudentMapper.xml"/>-->
+        <mapper resource="mapper/StudentMapper.xml"/>
     </mappers>
 
 </configuration>
