@@ -15,7 +15,7 @@ public class SimpleTest {
 
     @Before
     public void init() throws IOException {
-        studentDao = new StudentDao("mybatis-config.xml");
+        studentDao = new StudentDao();
     }
 
     @Test
@@ -35,5 +35,5 @@ public class SimpleTest {
         all.forEach(System.out::println);
     }
 
-   
+
 }

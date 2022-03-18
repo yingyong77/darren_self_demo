@@ -1,5 +1,6 @@
 package com.darren.demo.spring.mybatis;
 
+import lombok.Getter;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -11,11 +12,23 @@ import java.util.List;
 
 public class StudentDao {
 
-    private final SqlSessionFactory sqlSessionFactory;
+    @Getter
+    private static final SqlSessionFactory sqlSessionFactory;
 
-    public StudentDao(String configPath) throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream(configPath);
+    private final static String resourcepath = "mybatis-config.xml";
+
+    static {
+        InputStream inputStream = null;
+        try {
+            inputStream = Resources.getResourceAsStream("resourcepath");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+    }
+
+    public StudentDao() {
+
     }
 
     public List<Student> findAll() {

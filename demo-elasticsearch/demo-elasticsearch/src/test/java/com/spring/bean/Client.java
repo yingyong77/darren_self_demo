@@ -1,9 +1,10 @@
 package com.spring.bean;
 
-import com.spring.aop.SpringAopBean;
-import org.springframework.beans.factory.support.AbstractBeanDefinition;
-import org.springframework.beans.factory.support.BeanDefinitionBuilder;
+import com.darren.demo.spring.mybatis.StudentDao;
+import com.mybatis.spring.UserService;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 /**
  * spring容器启动方式之配置
@@ -17,29 +18,40 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class Client {
 
+    @Bean
+    public SqlSessionFactory sqlSessionFactory() {
+        return StudentDao.getSqlSessionFactory();
+    }
 
     public static void main(String[] args) throws Exception {
 
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Appconfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        context.register(Appconfig.class);
 
 //        context.register(Appconfig.class);
 //        context.getEnvironment().setRequiredProperties("bmlxx");
 //        context.refresh();
-
-        //context.registerShutdownHook();
-        //声明式的
-        AbstractBeanDefinition beanDefinition = BeanDefinitionBuilder.genericBeanDefinition().getBeanDefinition();
-        beanDefinition.setBeanClass(MyBean.class);
 
         //factoryBean
 //        Object messageService = context.getBean("&bmlFactoryBean");
 //        Object messageService1 = context.getBean("bmlFactoryBean");
 //        System.out.println(messageService + "--" + messageService1);
 
-        SpringAopBean springAopBean = context.getBean(SpringAopBean.class);
-        System.out.println(springAopBean);
+//        SpringAopBean springAopBean = context.getBean(SpringAopBean.class);
+//        System.out.println(springAopBean);
 //        springAopBean.test();
 
-        System.out.println(context.getBean(AnnotationConfigScanBean.class));
+        //context.registerShutdownHook();
+        //声明式的
+//        AbstractBeanDefinition beanDefinition = BeanDefinitionBuilder.genericBeanDefinition().getBeanDefinition();
+//        beanDefinition.setBeanClass(CustomMapperFactorybean.class);
+//        beanDefinition.getConstructorArgumentValues().addArgumentValues();
+//        context.registerBeanDefinition("user", beanDefinition);
+
+        context.refresh();
+        //Bean 管理创建
+
+        UserService userService = context.getBean("userService", UserService.class);
+        userService.test();
     }
 }
