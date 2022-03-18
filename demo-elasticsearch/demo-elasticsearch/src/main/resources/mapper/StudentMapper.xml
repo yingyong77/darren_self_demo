@@ -5,6 +5,8 @@
 
 <mapper namespace="test">
 
+    <cache eviction="LRU" readOnly="true" flushInterval="100000" size="1024"></cache>
+
     <select id="findStuById" resultType="com.darren.demo.spring.mybatis.Student">
         SELECT *
         FROM student

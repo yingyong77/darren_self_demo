@@ -6,7 +6,6 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -24,10 +23,7 @@ import java.util.Objects;
 @Configuration
 @Slf4j
 public class ApiLogAop {
-
-    @Autowired
-    private SpringAopBean annotationConfigScanBean;
-
+    
     @Pointcut(value = "execution(public * com.spring.aop.SpringAopBean.test(..))")
     public void controllerLog() {
 

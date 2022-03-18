@@ -31,6 +31,11 @@ public class BmlFactoryBean<T> implements FactoryBean<T> {
     }
 
     @Override
+    public boolean isSingleton() {
+        return false;
+    }
+
+    @Override
     public Class<?> getObjectType() {
         return User.class;
     }

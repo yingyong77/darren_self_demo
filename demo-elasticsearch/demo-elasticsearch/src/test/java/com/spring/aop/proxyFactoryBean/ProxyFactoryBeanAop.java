@@ -11,7 +11,7 @@ public class ProxyFactoryBeanAop {
 
     public static void main(String[] args) {
 
-        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext("com.dddd");
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext("com.spring");
 
         //aop3  实际的spring使用aop的过程，配置好ProxyFactoryBean，给ProxyFactoryBean设置一个bean id
         //然后通过ac.getBean(bean id),就取得被ProxyFactoryBean代理的对象，不是ProxyFactoryBean

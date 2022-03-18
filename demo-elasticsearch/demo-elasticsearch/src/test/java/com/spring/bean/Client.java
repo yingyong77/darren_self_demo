@@ -1,5 +1,8 @@
 package com.spring.bean;
 
+import com.spring.aop.SpringAopBean;
+import org.springframework.beans.factory.support.AbstractBeanDefinition;
+import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -15,7 +18,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Client {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Appconfig.class);
 
@@ -24,6 +27,18 @@ public class Client {
 //        context.refresh();
 
         //context.registerShutdownHook();
+        //声明式的
+        AbstractBeanDefinition beanDefinition = BeanDefinitionBuilder.genericBeanDefinition().getBeanDefinition();
+        beanDefinition.setBeanClass(MyBean.class);
+
+        //factoryBean
+//        Object messageService = context.getBean("&bmlFactoryBean");
+//        Object messageService1 = context.getBean("bmlFactoryBean");
+//        System.out.println(messageService + "--" + messageService1);
+
+        SpringAopBean springAopBean = context.getBean(SpringAopBean.class);
+        System.out.println(springAopBean);
+//        springAopBean.test();
 
         System.out.println(context.getBean(AnnotationConfigScanBean.class));
     }

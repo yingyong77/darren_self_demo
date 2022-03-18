@@ -19,5 +19,7 @@ public class Student {
 
     private Integer gender;
 
+    public static Integer s;
+
 }
 
