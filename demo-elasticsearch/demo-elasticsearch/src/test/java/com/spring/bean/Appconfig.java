@@ -1,6 +1,8 @@
 package com.spring.bean;
 
-import com.mybatis.spring.CustomImportBeanDefinitionRegister;
+import com.darren.demo.spring.mybatis.StudentDao;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
@@ -13,8 +15,9 @@ import org.springframework.core.env.Environment;
 @Configuration
 //@ComponentScan(basePackageClasses = {AnnotationConfigScanBean.class})
 //会注册一个AnnotationAwareAspectJAutoProxyCreator
-@ComponentScans(value = {@ComponentScan("com.mybatis.spring"), @ComponentScan("com.spring")})
-@Import(CustomImportBeanDefinitionRegister.class)
+@ComponentScans(value = {@ComponentScan("com.spring")})
+//@Import(CustomImportBeanDefinitionRegister.class)
+@MapperScan("com.mybatis.spring")
 @EnableAspectJAutoProxy
 public class Appconfig {
 
@@ -40,6 +43,11 @@ public class Appconfig {
     //@Scope("prototype")
     public MyBean myBean() {
         return new MyBean();
+    }
+
+    @Bean
+    public SqlSessionFactory sqlSessionFactory() {
+        return new StudentDao("mybatis-config.xml").getSqlSessionFactory();
     }
 
 }

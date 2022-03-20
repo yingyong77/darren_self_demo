@@ -15,7 +15,7 @@ public class SimpleTest {
 
     @Before
     public void init() throws IOException {
-        studentDao = new StudentDao();
+        studentDao = new StudentDao("mybatis-config.xml");
     }
 
     @Test

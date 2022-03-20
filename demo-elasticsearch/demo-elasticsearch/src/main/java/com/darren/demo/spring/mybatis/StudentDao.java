@@ -1,34 +1,26 @@
 package com.darren.demo.spring.mybatis;
 
 import lombok.Getter;
+import lombok.SneakyThrows;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
 public class StudentDao {
 
     @Getter
-    private static final SqlSessionFactory sqlSessionFactory;
+    private final SqlSessionFactory sqlSessionFactory;
 
     private final static String resourcepath = "mybatis-config.xml";
 
-    static {
-        InputStream inputStream = null;
-        try {
-            inputStream = Resources.getResourceAsStream("resourcepath");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    @SneakyThrows
+    public StudentDao(String configPath) {
+        InputStream inputStream = Resources.getResourceAsStream(configPath);
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-    }
-
-    public StudentDao() {
-
     }
 
     public List<Student> findAll() {

@@ -1,10 +1,7 @@
 package com.spring.bean;
 
-import com.darren.demo.spring.mybatis.StudentDao;
-import com.mybatis.spring.UserService;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
 
 /**
  * spring容器启动方式之配置
@@ -17,12 +14,7 @@ import org.springframework.context.annotation.Bean;
  * @date : 2021/12/13
  */
 public class Client {
-
-    @Bean
-    public SqlSessionFactory sqlSessionFactory() {
-        return StudentDao.getSqlSessionFactory();
-    }
-
+    
     public static void main(String[] args) throws Exception {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
@@ -50,8 +42,9 @@ public class Client {
 
         context.refresh();
         //Bean 管理创建
+        SqlSessionFactory sqlSessionFactory = context.getBean("sqlSessionFactory", SqlSessionFactory.class);
 
-        UserService userService = context.getBean("userService", UserService.class);
-        userService.test();
+        //UserService userService = context.getBean("userService", UserService.class);
+        //userService.test();
     }
 }
