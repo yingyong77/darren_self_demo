@@ -28,5 +28,10 @@ public class PureMapperSpringTest {
         studentList.forEach(System.out::println);
     }
 
-   
+    @Test
+    public void test1() {
+        List<Object> studentList = sessionTemplate.selectList("findAllFromXml");
+        studentList.forEach(System.out::println);
+    }
+
 }

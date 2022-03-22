@@ -45,7 +45,7 @@ public class Appconfig {
         return new MyBean();
     }
 
-    @Bean
+    //@Bean
     public SqlSessionFactory sqlSessionFactory() {
         return new StudentDao("mybatis-config.xml").getSqlSessionFactory();
     }

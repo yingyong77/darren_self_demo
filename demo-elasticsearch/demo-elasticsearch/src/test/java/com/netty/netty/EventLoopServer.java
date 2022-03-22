@@ -25,7 +25,7 @@ public class EventLoopServer {
         new ServerBootstrap()
                 //boss 和worker
                 //boss 只负责serverSocketChannel 上accept事件，worker只负责socketChannel上的读写
-                .group(new NioEventLoopGroup(2))
+                .group(new NioEventLoopGroup(), new NioEventLoopGroup(2))
                 .channel(NioServerSocketChannel.class)
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override

@@ -5,6 +5,9 @@ digger:
   mcc-key: skytech1
 
 
+server:
+  port: 8787
+
 spring:
   redis:
     database: 2
@@ -24,8 +27,6 @@ spring:
     elasticsearch:
       cluster-name: digger-71-test
       cluster-nodes: 192.168.1.71:9300
-  profiles:
-    include: ons-prod
   datasource:
     url: jdbc:mysql://101.35.90.82:3306/darren_db?characterEncoding=utf8
     username: root
