@@ -47,6 +47,8 @@ public class TestPipeline {
                             @Override
                             public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
                                 log.debug("3,结果{},class:{}", msg, msg.getClass());
+                                //ch.writeAndFlush(ctx.alloc().buffer().writeBytes("server...".getBytes()));
+                                ctx.writeAndFlush(ctx.alloc().buffer().writeBytes("server...".getBytes()));
                             }
                         });
 
