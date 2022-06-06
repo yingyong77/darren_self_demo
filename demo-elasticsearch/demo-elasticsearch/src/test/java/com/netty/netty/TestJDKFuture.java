@@ -25,7 +25,7 @@ public class TestJDKFuture {
 
 
         log.debug("等待结果");
-        //主线程拿到结果
+        //主线程拿到结果  唤醒主线程
         System.out.println("结果是" + future.get());
     }
 }

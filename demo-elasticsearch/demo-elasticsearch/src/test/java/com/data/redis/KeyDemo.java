@@ -356,8 +356,6 @@ public class KeyDemo {
         redisTemplate.boundZSetOps("zSetKey").removeRangeByScore(0D, 2.2D);
         //为指定元素加分（Double类型）
         Double score1 = redisTemplate.boundZSetOps("zSetKey").incrementScore("zSetVaule", 1.1D);
-
-
     }
 
 }

@@ -24,7 +24,7 @@ public class TestPipeline {
                     @Override
                     protected void initChannel(NioSocketChannel ch) throws Exception {
                         ChannelPipeline pipeline = ch.pipeline();
-                        //head-->h1--->h2-->tail
+                        //head-->h1--->h2-->h4-->h5-->h6-->tail 出栈h6 h5 h4
                         pipeline.addLast("h1", new ChannelInboundHandlerAdapter() {
                             @Override
                             public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
@@ -48,10 +48,9 @@ public class TestPipeline {
                             public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
                                 log.debug("3,结果{},class:{}", msg, msg.getClass());
                                 //ch.writeAndFlush(ctx.alloc().buffer().writeBytes("server...".getBytes()));
-                                ctx.writeAndFlush(ctx.alloc().buffer().writeBytes("server...".getBytes()));
+                                ctx.channel().writeAndFlush(ctx.alloc().buffer().writeBytes("server...".getBytes()));
                             }
                         });
-
                         //出栈的顺序是从尾巴到前
                         pipeline.addLast("h4", new ChannelOutboundHandlerAdapter() {
                             @Override
