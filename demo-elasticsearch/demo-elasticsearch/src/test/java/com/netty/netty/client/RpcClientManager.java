@@ -53,6 +53,9 @@ public class RpcClientManager {
             DefaultPromise<Object> promise = new DefaultPromise<>(getChannel().eventLoop());
             RpcResponseMessageHandler.PROMISES.put(sequenceId, promise);
 
+            //异步接收结果的线程
+//            promise.addListener(future -> {});
+
             //等待promise的结果
             promise.await(); //结果成功或失败 不会抛异常
             if (promise.isSuccess()) {
@@ -97,6 +100,7 @@ public class RpcClientManager {
                     ch.pipeline().addLast(new ProtocolFrameDecoder());
                     ch.pipeline().addLast(LOGGING_HANDLER);
                     ch.pipeline().addLast(MESSAGE_CODEC);
+
                     ch.pipeline().addLast(RPC_HANDLER);
                 }
             });

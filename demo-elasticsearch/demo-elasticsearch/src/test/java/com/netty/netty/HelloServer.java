@@ -11,6 +11,9 @@ import io.netty.handler.codec.string.StringDecoder;
 
 /**
  * netty 服务端
+ * init 创建serverSocketChannel
+ * register 绑定到selector上
+ * dobind0 ssc监听
  *
  * @author : darren
  * @date : 2022/3/19

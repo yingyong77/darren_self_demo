@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * @author : darren
@@ -30,7 +31,9 @@ public class RpcRequestMessageHandler extends SimpleChannelInboundHandler<RpcReq
             rpcResponseMessage.setReturnValue(result);
             ctx.writeAndFlush(rpcResponseMessage);
         } catch (Exception e) {
-            rpcResponseMessage.setExceptionValue(e);
+            log.error(Arrays.toString(e.getStackTrace()) + e.getMessage());
+            String message = e.getCause().getMessage(); //实际的起因
+            rpcResponseMessage.setExceptionValue(new Exception("远程调用出错" + message));
         }
 
     }
