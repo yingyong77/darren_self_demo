@@ -1,6 +1,6 @@
 package com.spring.bean;
 
-import com.darren.demo.DemoElasticsearchApplication;
+import com.darren.demo.SelfDemoApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @date : 2021/12/10
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = DemoElasticsearchApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = SelfDemoApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class BeanFactoryTest {
 
     @Test

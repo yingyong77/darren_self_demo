@@ -12,6 +12,7 @@ public class LicenseLoad {
         boolean result = false;
 
         try {
+            
             InputStream is = LicenseLoad.class.getClassLoader().getResourceAsStream("license.xml");
             License aposeLic = new License();
             aposeLic.setLicense(is);

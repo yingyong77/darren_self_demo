@@ -11,6 +11,7 @@ import java.util.List;
  * 演示软引用
  * <p>
  * 软引用 配合引用队列
+ * -Xmx20m -XX:+PrintGCDetails -verbose:gc
  *
  * @author : darren
  * @date : 2022/2/13
@@ -59,6 +60,7 @@ class SoftReferenceDemo {
             poll = queue.poll();
         }
 
+        //只有最后一个被保留了  其他四个null值已经被移除了
         System.out.println("循环结束：" + list.size());
         for (SoftReference<byte[]> softReference : list) {
             System.out.println(softReference.get());

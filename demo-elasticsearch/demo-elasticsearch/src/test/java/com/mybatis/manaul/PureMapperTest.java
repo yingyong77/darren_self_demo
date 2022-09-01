@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PureMapperTest {
-
+    
     private SqlSessionFactory sqlSessionFactory;
 
     @Before
@@ -49,6 +49,9 @@ public class PureMapperTest {
         studentList.forEach(System.out::println);
     }
 
+    /**
+     * 批量查询
+     */
     @Test
     public void testBatchQuery() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -57,12 +60,15 @@ public class PureMapperTest {
         students.forEach(System.out::println);
     }
 
+    /**
+     * 测试一级缓存
+     */
     @Test
     public void testFindById() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        Student u1 = sqlSession.selectOne("findStuById", 1);
+        Student u1 = sqlSession.selectOne("findStuById", 6);
         System.out.println(u1);
-        Student u2 = sqlSession.selectOne("findStuById", 1);
+        Student u2 = sqlSession.selectOne("findStuById", 6);
         System.out.println(u2);
     }
 
@@ -73,7 +79,7 @@ public class PureMapperTest {
     public void testLevel2Cache() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         PureStudentMapper mapper = sqlSession.getMapper(PureStudentMapper.class);
-        Student student1 = mapper.findStuById(1);
+        Student student1 = mapper.findStuById(6);
         System.out.println(student1);
         //注意需要提交后才会将结果保存到二级缓存
         //若不提交，则还是会查询2次数据库
@@ -81,7 +87,7 @@ public class PureMapperTest {
 
         SqlSession sqlSession2 = sqlSessionFactory.openSession();
         PureStudentMapper mapper2 = sqlSession2.getMapper(PureStudentMapper.class);
-        Student user2 = mapper2.findStuById(1);
+        Student user2 = mapper2.findStuById(7);
         System.out.println(user2);
     }
 

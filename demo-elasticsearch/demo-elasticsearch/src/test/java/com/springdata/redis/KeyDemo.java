@@ -1,6 +1,6 @@
-package com.data.redis;
+package com.springdata.redis;
 
-import com.darren.demo.DemoElasticsearchApplication;
+import com.darren.demo.SelfDemoApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * @date : 2022/2/15
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = DemoElasticsearchApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = SelfDemoApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class KeyDemo {
 
     /**
@@ -46,6 +46,7 @@ public class KeyDemo {
         //获取key的过期时间 key不存在为-2
         Long expire = redisTemplate.getExpire("name1");
         System.out.println("redis key name1 过期时间为:" + expire);
+
     }
 
     /**

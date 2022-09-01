@@ -1,12 +1,12 @@
 package com.darren.demo.spring.jdbc;
 
+import com.darren.demo.spring.mybatis.Student;
 import org.apache.ibatis.io.Resources;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 public class DBUtil {
@@ -14,6 +14,40 @@ public class DBUtil {
     public static void main(String[] args) {
         DBUtil util = new DBUtil();
         util.add();
+    }
+
+
+    /**
+     * 查询课程
+     *
+     * @return
+     */
+    public List<Student> findCourseList() {
+        String sql = "select * from t_course order by course_id";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        //创建一个集合对象用来存放查询到的数据
+        List<Student> courseList = new ArrayList<>();
+        try {
+            conn = openConnection();
+            pstmt = (PreparedStatement) conn.prepareStatement(sql);
+            rs = (ResultSet) pstmt.executeQuery();
+            while (rs.next()) {
+                int courseId = rs.getInt("course_id");
+                String courseName = rs.getString("course_name");
+                //每个记录对应一个对象
+                Student course = new Student();
+                //将对象放到集合中
+                courseList.add(course);
+            }
+        } catch (SQLException e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        } finally {
+            closeConnection(conn);        //必须关闭
+        }
+        return courseList;
     }
 
     public void add() {

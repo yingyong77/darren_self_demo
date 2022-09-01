@@ -39,6 +39,7 @@ public class TestRedis {
                     ch.pipeline().addLast(new ChannelInboundHandlerAdapter() {
                         @Override
                         public void channelActive(ChannelHandlerContext ctx) throws Exception {
+                            //BSD协议
                             ByteBuf buf = ctx.alloc().buffer();
                             //三个元素
                             buf.writeBytes("*3".getBytes());

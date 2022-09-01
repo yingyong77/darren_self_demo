@@ -1,6 +1,6 @@
 package com.other;
 
-import com.darren.demo.DemoElasticsearchApplication;
+import com.darren.demo.SelfDemoApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,9 +11,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @date : 2021/11/22
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = DemoElasticsearchApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = SelfDemoApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ClassLoaderTest {
-    
+
+
     @Test
     public void getClassLoader() throws ClassNotFoundException {
 

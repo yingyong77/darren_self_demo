@@ -23,6 +23,7 @@ public class CustomScan extends ClassPathBeanDefinitionScanner {
 
     /**
      * 走spring的扫描逻辑
+     * 完成扫描
      *
      * @param basePackages
      * @return

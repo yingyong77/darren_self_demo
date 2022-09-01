@@ -4,9 +4,18 @@
 
 <!--这里命名空间必须统一  与dao的必须保持统一   mybatis会去找-->
 <mapper namespace="com.darren.demo.spring.mybatis.PureStudentMapper">
+
+    <cache eviction="LRU" readOnly="true" flushInterval="100000" size="1024"></cache>
+
     <select id="findAllFromXml" resultType="com.darren.demo.spring.mybatis.Student">
         SELECT *
         FROM student;
+    </select>
+
+    <select id="findStuById" resultType="com.darren.demo.spring.mybatis.Student">
+        SELECT *
+        FROM student
+        where id = #{id};
     </select>
 
 </mapper>

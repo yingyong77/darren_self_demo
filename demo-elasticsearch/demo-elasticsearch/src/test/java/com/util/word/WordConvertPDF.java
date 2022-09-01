@@ -1,6 +1,6 @@
 package com.util.word;
 
-import com.darren.demo.DemoElasticsearchApplication;
+import com.darren.demo.SelfDemoApplication;
 import com.documents4j.api.DocumentType;
 import com.documents4j.api.IConverter;
 import com.documents4j.job.LocalConverter;
@@ -18,7 +18,7 @@ import java.io.*;
  * @date : 2021/11/24
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = DemoElasticsearchApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = SelfDemoApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class WordConvertPDF {
 
     @Test

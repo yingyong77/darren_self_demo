@@ -6,7 +6,7 @@
     <!-- 配置文件信息 -->
     <properties resource="properties/db.properties"></properties>
 
-    <!--    开启二级缓存-->
+    <!--        开启二级缓存-->
     <settings>
         <setting name="cacheEnabled" value="true"/>
     </settings>
@@ -40,7 +40,7 @@
         <!--        <mapper resource="mapper/PureStudentMapper.xml"/>-->
         <mapper class="com.darren.demo.spring.mybatis.PureStudentMapper"/>
         <!--        <package name="com.darren.demo.spring.mybatis"/>-->
-        <mapper resource="mapper/StudentMapper.xml"/>
+        <!--        <mapper resource="mapper/StudentMapper.xml"/>-->
     </mappers>
 
 </configuration>

@@ -22,6 +22,12 @@ spring:
         max-wait: 5000
     timeout: 5000
   data:
+    mongodb:
+      uri: mongodb://mongoadmin:secret@101.35.90.82:27017
+      database: test
+      username: mongoadmin
+      password: secret
+
     jest:
       uri: http://192.168.1.71:9200
     elasticsearch:

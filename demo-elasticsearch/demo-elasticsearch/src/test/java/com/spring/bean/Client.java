@@ -1,6 +1,10 @@
 package com.spring.bean;
 
+import com.mybatis.spring.CustomMapperFactorybean;
+import com.mybatis.spring.mapper.PureStudentMapper;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.springframework.beans.factory.support.AbstractBeanDefinition;
+import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -14,7 +18,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @date : 2021/12/13
  */
 public class Client {
-    
+
     public static void main(String[] args) throws Exception {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
@@ -35,16 +39,17 @@ public class Client {
 
         //context.registerShutdownHook();
         //声明式的
-//        AbstractBeanDefinition beanDefinition = BeanDefinitionBuilder.genericBeanDefinition().getBeanDefinition();
-//        beanDefinition.setBeanClass(CustomMapperFactorybean.class);
-//        beanDefinition.getConstructorArgumentValues().addArgumentValues();
-//        context.registerBeanDefinition("user", beanDefinition);
+        AbstractBeanDefinition beanDefinition = BeanDefinitionBuilder.genericBeanDefinition().getBeanDefinition();
+        beanDefinition.setBeanClass(CustomMapperFactorybean.class);
+        beanDefinition.getConstructorArgumentValues().addGenericArgumentValue(PureStudentMapper.class);
+        context.registerBeanDefinition("user", beanDefinition);
 
         context.refresh();
         //Bean 管理创建
         SqlSessionFactory sqlSessionFactory = context.getBean("sqlSessionFactory", SqlSessionFactory.class);
 
-        //UserService userService = context.getBean("userService", UserService.class);
+        final Object user = context.getBean("user");
+        // UserService userService = context.getBean("userService", UserService.class);
         //userService.test();
     }
 }

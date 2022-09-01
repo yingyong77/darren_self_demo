@@ -6,7 +6,8 @@ package com.darren.demo.designmodel.Singleton;
  */
 public class Singleton3 {
 
-    private static Singleton3 instance = null;
+    /*可以禁止指令重排序这个很重要*/
+    private static volatile Singleton3 instance = null;
 
     private Singleton3() {
     }

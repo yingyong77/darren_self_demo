@@ -1,4 +1,4 @@
-package com.darren.demo.db.redis;
+package com.darren.demo.spring.data.redis;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;

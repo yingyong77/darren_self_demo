@@ -22,7 +22,7 @@ public class SimpleTest {
     public void insertTest() {
         Student student = new Student();
         student.setId(1);
-        student.setName("yogurt");
+        student.setName("darren");
         student.setAge(24);
         student.setGender(1);
         student.setScore(100);
